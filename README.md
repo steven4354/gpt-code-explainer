@@ -10,7 +10,7 @@ With this revolutionary tool at your disposal, you can now tackle unfamiliar pro
 
 Imagine the possibilities! With continuous improvements to the prompt and the latest GPT releases, the onboarding time for any codebase can potentially be reduced from days or weeks to just a few short minutes. This is the dawn of a new era in coding, and you can be a part of it!
 
-```
+```bash
 # run this repo with
 npm start
 ```
