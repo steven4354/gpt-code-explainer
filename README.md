@@ -51,7 +51,7 @@ This repository marks the initial stage of enabling an LLM to participate in cod
 
 The "logic" layer functions in a manner akin to that of a skilled developer, identifying relevant files to examine. 
 
-Once file paths are obtained, the code within those files can be extracted and recursively sent back to the LLM to produce code changes.
+Once file paths are obtained, the code within those files can be extracted and sent back to the LLM to produce code changes.
 
 Code changes can then be compiled and sent up as a pull request.
 
