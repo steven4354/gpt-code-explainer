@@ -121,4 +121,11 @@ fs.readFile(filePath, 'utf8', async (err, data) => {
 
   console.log(`Top 10 files that might answer the question "${userQuestion}":`);
   console.log(relevantFiles.slice(0, 10));
+
+  // write the relevantFiles to a file in this folder called "relevant-files.txt"
+    fs.writeFile('relevant-files.txt', relevantFiles.join('\n'), (err) => {
+        if (err) throw err;
+        console.log('The file has been saved!');
+    }
+    );
 });
