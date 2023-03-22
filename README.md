@@ -36,3 +36,9 @@ The "logic" layer functions in a manner akin to that of a skilled developer, ide
 Once file paths are obtained, the code within those files can be extracted and sent back to the LLM to produce code changes.
 
 Code changes can then be compiled and sent up as a pull request.
+
+## possible todos
+
+chain together the prompts to also allow LLM to access to the code contents within the relevant files
+
+filepaths -> llm -> relevant files -> code -> llm -> updated code -> pull request
