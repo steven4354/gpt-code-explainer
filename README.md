@@ -14,7 +14,7 @@ commands
 npm start
 ```
 
-### to use
+## to use
 
 this is still pretty manual rn. the workflow is like so:
 
@@ -30,11 +30,11 @@ this is still pretty manual rn. the workflow is like so:
 
 - all your results will be compiled in `relevant-files.json`
 
-### disclaimer
+## disclaimer
 
 didn't have enough time to make this pretty haha
 
-### future
+## future
 
 this repo is the first step in allowing an LLM to contribute to any codebase and write production level code
 
