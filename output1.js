@@ -13,85 +13,15 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+const systemPrompt = "You are a great developer assistnant to the user" + "\n\n" +
+
+"Ask for from the user the FRAMEWORK, FILES, and QUESTION" + "\n\n" + 
+
+"and then return the POSSIBLE_RELEVANT_FILES. You may guess a few files, no need to be fully sure." + "\n\n"
+
 // turn frameworks into "laravel, react, node"
 const promptFormat = (files, question) => {
-    return `You are a great developer \n\n` + 
-    
-    "You are looking for RELEVANT_FILES that might answer the QUESTION. \n\n" +
-
-    "You have a list of files from a github code repository in FILES. You aren't always given all the files. \n\n" +
-    
-    "Out of the list in FILES, put in RELEVANT_FILES the most likely files that if you looked at might answer the QUESTION \n\n" +
-    
-    "Answer the RELEVANT_FILES section. \n\n" +
-
-    "FRAMEWORKS: \n\n" +
-
-    "nodejs" + 
-
-    "\n\n" +
-    
-    "FILES: \n\n" +
-    
-    "```bash\n" +
-
-`
-- .
-- ./package.json
-- ./package-lock.json
-- ./README.md
-- ./src
-- ./src/index.js
-` +
-    
-    "\n\n```\n\n" +
-    
-    "QUESTION: \n\n" +
-    
-    "What file contains the list of dependencies for the project? \n\n" +
-
-    "FRAMEWORKS: \n\n" +
-
-    "nodejs" + 
-
-    "\n\n" +
-    
-    "RELEVANT_FILES: \n\n" +
-
-    "```json\n" +
-        
-    "[package.json] \n\n" +
-
-    "```" +
-    
-    "FILES: \n\n" +
-
-    "```bash\n" +
-
-`
-- .
-- ./package.json
-- ./package-lock.json
-- ./README.md
-- ./src
-- ./src/index.js
-` +
-
-    "\n\n```\n\n" +
-
-    "QUESTION: \n\n" +
-
-    "What is the name of the file that contains the main entry point for the project? \n\n" +
-
-    "RELEVANT_FILES: \n\n" +
-
-    "```json\n" +
-
-    "[index.js] \n\n" +
-
-    "```" + 
-
-    "FRAMEWORKS: \n\n" +
+    return "FRAMEWORKS: \n\n" +
 
     "laraval, nodejs" + 
 
@@ -116,6 +46,80 @@ const promptFormat = (files, question) => {
     "```json\n"
 }
 
+const try1 =  "FRAMEWORKS: \n\n" +
+
+"nodejs" + 
+
+"\n\n" +
+
+"FILES: \n\n" +
+
+"```bash\n" +
+
+`
+- .
+- ./package.json
+- ./package-lock.json
+- ./README.md
+- ./src
+- ./src/index.js
+` +
+
+"\n\n```\n\n" +
+
+"QUESTION: \n\n" +
+
+"What file contains the list of dependencies for the project? \n\n"
+
+const answer1 = "RELEVANT_FILES: \n\n" +
+
+"```json\n" +
+    
+"[package.json] \n\n" +
+
+"```"
+
+const try2 =  "FRAMEWORKS: \n\n" +
+
+"nodejs" + 
+
+"\n\n" +
+
+"RELEVANT_FILES: \n\n" +
+
+"```json\n" +
+    
+"[package.json] \n\n" +
+
+"```" +
+
+"FILES: \n\n" +
+
+"```bash\n" +
+
+`
+- .
+- ./package.json
+- ./package-lock.json
+- ./README.md
+- ./src
+- ./src/index.js
+` +
+
+"\n\n```\n\n" +
+
+"QUESTION: \n\n" +
+
+"What is the name of the file that contains the main entry point for the project? \n\n"
+
+const answer2 =  "RELEVANT_FILES: \n\n" +
+
+"```json\n" +
+
+"[index.js] \n\n" +
+
+"```"
+
 fs.readFile(filePath, 'utf8', async (err, data) => {
   if (err) throw err;
 
@@ -127,20 +131,35 @@ fs.readFile(filePath, 'utf8', async (err, data) => {
   for (let chunkStart = 0; chunkStart < filePaths.length; chunkStart += maxFilesPerChunk) {
     const chunk = filePaths.slice(chunkStart, chunkStart + maxFilesPerChunk);
 
-    const prompt = promptFormat(chunk, userQuestion);
-    console.log("STEVENDEBUG Prompt: ", prompt)
-
     // write a messages for chat gpt
     const messages = [
         {
             role: "system",
-            "content": "If you (the assistant) needs additional information then tell the user what information to give you."
+            "content": systemPrompt
         },
         {
-            "content": prompt,
             role: "user",
+            content: try1
         },
+        {
+            role: "assistant",
+            content: answer1
+        },
+        {
+            role: "user",
+            content: try2
+        },
+        {
+            role: "assistant",
+            content: answer2
+        },
+        {
+            role: "user",
+            content: promptFormat(chunk, userQuestion)
+        }
     ]
+
+    console.log("STEVENDEBUG messages: ", JSON.stringify(messages))
 
     try {
       const completion = await openai.createChatCompletion({
@@ -173,7 +192,7 @@ fs.readFile(filePath, 'utf8', async (err, data) => {
   console.log(relevantFiles.slice(0, 10));
 
   // write the relevantFiles to a file in this folder called "relevant-files.txt"
-    fs.writeFile('relevant-files.json', relevantFiles, (err) => {
+    fs.writeFile('relevant-files.json', JSON.stringify(relevantFiles), (err) => {
         if (err) throw err;
         console.log('The file has been saved!');
     }

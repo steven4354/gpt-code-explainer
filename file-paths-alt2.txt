@@ -1,0 +1,26 @@
+- ./
+  - database/
+    - composer.lock
+    - server.php
+    - phpunit.xml
+  - bootstrap/
+  - app/
+    - index.php
+  - cache/
+  - config/
+  - mail/
+  - resources/
+    - trainingblock.sql
+    - webpack.mix.js
+  - storage/
+    - README.md
+    - artisan
+  - public/
+    - package-lock.json
+    - package.json
+    - gulpfile.js
+  - Modules/
+  - assets/
+  - front/
+  - routes/
+    - composer.json

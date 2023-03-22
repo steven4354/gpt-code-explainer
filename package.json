@@ -5,7 +5,7 @@
   "main": "output.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node output.js"
+    "start": "node output1.js"
   },
   "author": "steven4354",
   "license": "ISC",
