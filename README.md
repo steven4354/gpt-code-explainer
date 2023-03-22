@@ -1,6 +1,6 @@
 # gpt-code-explainer
 
-(below was written by chatgpt)
+_(below was written by chatgpt)_
 
 Behold the power of cutting-edge technology! 
 
@@ -37,14 +37,16 @@ didn't have enough time to make this pretty haha
 
 ## future
 
-(below was written by chatgpt)
+_(below was written by chatgpt)_
 
-This repository enables an LLM to write production-level code by utilizing a "logic" layer that functions like an expert developer.
+This repository marks the initial stage of enabling an LLM to participate in coding and generate high-quality production code. 
 
-The LLM can extract and integrate code from files and generate new code to match specified functions, streamlining the coding process. 
+The "logic" layer functions in a manner akin to that of a skilled developer, identifying relevant files to examine. 
 
-Once completed, a simple pull request completes the work, resulting in a full LLM developer. 
+Once file paths are obtained, the code within those files can be extracted and recursively sent back to the LLM to produce code changes.
 
-This technology has immense potential to make developers 10x more productive and revolutionize the future of coding.
+Code changes can then be compiled and sent up as a pull request.
 
-Or replace all devs. Muhahahaha
+The notion of an LLM developer can be somewhat unsettling, as it may lead to developers either becoming ten times more productive or being displaced from their positions.
+
+Muhahahaha
