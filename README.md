@@ -1,23 +1,5 @@
 # gpt-code-explainer
 
-_(below was written by chatgpt)_
-
-Behold the power of cutting-edge technology! 
-
-This remarkable program leverages the incredible capabilities of GPT-3 to help you navigate even the largest and most complex code repositories with ease. 
-
-**This repository intelligently analyzes all filepaths and provides you with the exact files you need to complete your tasks and answer your questions.**
-
-With this revolutionary tool at your disposal, you can now tackle unfamiliar programming languages and frameworks with confidence. 
-
-And when combined with the futuristic Cursor-DOT-So GPT code editor, you can contribute to entirely new codebases in mere minutes.
-
-Imagine the possibilities! With improvements to the prompt and new GPT releases! 
-
-The onboarding time for any codebase can potentially be reduced from days or weeks to just a few short minutes. 
-
-This is the dawn of a new era in coding, and you can be a part of it!
-
 ```bash
 # run this repo with
 npm start
@@ -54,7 +36,3 @@ The "logic" layer functions in a manner akin to that of a skilled developer, ide
 Once file paths are obtained, the code within those files can be extracted and sent back to the LLM to produce code changes.
 
 Code changes can then be compiled and sent up as a pull request.
-
-The notion of an LLM developer can be somewhat unsettling, as it may lead to developers either becoming ten times more productive or being displaced from their positions.
-
-Muhahahaha
