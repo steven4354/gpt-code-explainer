@@ -1,0 +1,16 @@
+{
+  "name": "test123",
+  "version": "1.0.0",
+  "description": "",
+  "main": "output.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node output.js"
+  },
+  "author": "steven4354",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  }
+}
