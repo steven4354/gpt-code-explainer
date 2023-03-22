@@ -4,11 +4,19 @@ _(below was written by chatgpt)_
 
 Behold the power of cutting-edge technology! 
 
-This remarkable program leverages the incredible capabilities of GPT-3 to help you navigate even the largest and most complex code repositories with ease. It intelligently analyzes all filepaths and provides you with the exact files you need to complete your tasks and answer your questions. 
+This remarkable program leverages the incredible capabilities of GPT-3 to help you navigate even the largest and most complex code repositories with ease. 
 
-With this revolutionary tool at your disposal, you can now tackle unfamiliar programming languages and frameworks with confidence, as it dramatically reduces the time it takes to get up to speed. And when combined with the futuristic Cursor-DOT-So GPT code editor, you can contribute to entirely new codebases in mere minutes, without ever having to read a single documentation. 
+**This repository intelligently analyzes all filepaths and provides you with the exact files you need to complete your tasks and answer your questions.**
 
-Imagine the possibilities! With continuous improvements to the prompt and the latest GPT releases, the onboarding time for any codebase can potentially be reduced from days or weeks to just a few short minutes. This is the dawn of a new era in coding, and you can be a part of it!
+With this revolutionary tool at your disposal, you can now tackle unfamiliar programming languages and frameworks with confidence. 
+
+And when combined with the futuristic Cursor-DOT-So GPT code editor, you can contribute to entirely new codebases in mere minutes.
+
+Imagine the possibilities! With improvements to the prompt and new GPT releases! 
+
+The onboarding time for any codebase can potentially be reduced from days or weeks to just a few short minutes. 
+
+This is the dawn of a new era in coding, and you can be a part of it!
 
 ```bash
 # run this repo with
