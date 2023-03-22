@@ -27,7 +27,7 @@ npm start
 
 this is still pretty manual rn. the workflow is like so:
 
-- say you have a large repository you have no idea on and never programmed it before. e.g. Laravel and PHP
+- say you have a large repository you have no idea how the framework works and never programmed it before. e.g. Laravel and PHP
 
 - go to the root of that codebase and run one of the commands within the `filepath-gen.sh` that will copy the filepath to your clipboard
 
