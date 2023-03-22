@@ -16,19 +16,19 @@ npm start
 
 ### to use
 
-this is still pretty manual rn. the workflow is like so
+this is still pretty manual rn. the workflow is like so:
 
-say you have a large repository you have no idea on and never programmed it before. e.g. Laravel and PHP
+- say you have a large repository you have no idea on and never programmed it before. e.g. Laravel and PHP
 
-go to the root of that codebase and run one of the commands within the `filepath-gen.sh` that will copy the filepath to your clipboard
+- go to the root of that codebase and run one of the commands within the `filepath-gen.sh` that will copy the filepath to your clipboard
 
-copy/paste the filepath list to `file-paths.txt` get rid of all the old stuff
+- copy/paste the filepath list to `file-paths.txt` get rid of all the old stuff
 
-go to `run1.js` and update the question you want to ask about the codebase. The example is `I have a facebook pixel js script, which file should I place it in?`
+- go to `run1.js` and update the question you want to ask about the codebase. The example is `I have a facebook pixel js script, which file should I place it in?`
 
-run `npm start`
+- run `npm start`
 
-all your results will be compiled in `relevant-files.json`
+- all your results will be compiled in `relevant-files.json`
 
 ### disclaimer
 
